@@ -4,6 +4,8 @@
 
 Welcome to the **Pregnancy Care Center Trivia Night** web application! This interactive trivia game is designed for family fun events, allowing multiple teams to compete by answering questions across various categories and difficulty levels.
 
+![Screenshot 2024-09-29 143402](https://github.com/user-attachments/assets/72a6c998-8df0-4aa1-87ca-bebfd9d27d6e)
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
