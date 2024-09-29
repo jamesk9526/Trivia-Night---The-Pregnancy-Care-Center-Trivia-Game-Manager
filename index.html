@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregnancy Care Center Trivia Night</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include Google Fonts for modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Include Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <img src="logo.png" alt="Pregnancy Care Center Logo" class="logo">
+      <h1>Family Fun Trivia Night</h1>
+    </div>
+  </header>
+
+  <div class="container main-container">
+    <!-- Leaderboard Sidebar -->
+    <aside id="leaderboard">
+      <h2><i class="fas fa-trophy"></i> Leaderboard</h2>
+      <ul id="leaderboard-list"></ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Team Management -->
+      <section id="team-management">
+        <h2><i class="fas fa-users"></i> Teams</h2>
+        <form id="team-form">
+          <input type="text" id="team-name-input" placeholder="Enter Team Name" required>
+          <button type="submit"><i class="fas fa-plus"></i> Add Team</button>
+        </form>
+        <ul id="team-list"></ul>
+      </section>
+
+      <!-- Trivia Game Area -->
+      <section id="game-area" class="hidden">
+        <h2>Round <span id="round-number">1</span> - Category: <span id="category-name"></span></h2>
+        <div id="question-display">
+          <p id="question-text"></p>
+        </div>
+        <div id="correct-answer-display" class="hidden">
+          <h3>The correct answer is:</h3>
+          <p id="correct-answer-text">[Answer Hidden]</p>
+        </div>
+        <form id="answer-form">
+          <label for="team-select">Team:</label>
+          <select id="team-select"></select>
+          <input type="text" id="answer-input" placeholder="Enter your answer here" required>
+          <button type="submit"><i class="fas fa-paper-plane"></i> Submit Answer</button>
+        </form>
+        <p id="feedback-message"></p>
+        <button id="next-question" class="hidden"><i class="fas fa-forward"></i> Next Question</button>
+      </section>
+    </main>
+
+    <!-- Admin Panel -->
+    <aside id="admin-panel">
+      <h2><i class="fas fa-cog"></i> Admin Panel</h2>
+      <label for="question-file-select">Select Question File:</label>
+      <select id="question-file-select">
+        <option value="questions.csv">Default Questions</option>
+        <option value="custom">Upload Custom CSV File</option>
+      </select>
+      <!-- File Input for Custom Questions -->
+      <input type="file" id="custom-question-file" accept=".csv" class="hidden">
+      <button id="start-game"><i class="fas fa-play"></i> Start Game</button>
+      <button id="save-session"><i class="fas fa-save"></i> Save Session</button>
+      <button id="load-session"><i class="fas fa-folder-open"></i> Load Session</button>
+      <button id="edit-scores"><i class="fas fa-edit"></i> Edit Scores</button>
+      <button id="skip-question"><i class="fas fa-step-forward"></i> Skip Question</button>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2024 Pregnancy Care Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Include the JavaScript file -->
+  <script src="app.js"></script>
+  <!-- Include Papa Parse for CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
+</body>
+</html>
